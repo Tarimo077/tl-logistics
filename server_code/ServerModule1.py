@@ -34,3 +34,7 @@ def getTrips():
   }
   response = anvil.http.request(url, method="GET", headers=headers, username='admin', password='123Give!@#')
   return response
+
+@anvil.server.callable
+def setCashVisisbility():
+  return False

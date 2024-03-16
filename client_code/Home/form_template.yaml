@@ -4,10 +4,25 @@ container:
   properties: {html: '@theme:standard-page.html', background: ''}
 components:
 - type: ColumnPanel
-  properties: {col_widths: '{}'}
+  properties: {col_widths: '{"RBIIXF":55,"BRJHGZ":5}'}
   name: content_panel
   layout_properties: {slot: default}
   components:
+  - name: label_5
+    properties: {text: CASH IN, align: center, bold: true}
+    type: Label
+    layout_properties: {grid_position: 'JEWFGW,URIPDR'}
+  - name: moneyin
+    properties: {text: '', foreground: 'theme:Primary Container', background: '#0000ff',
+      role: headline, icon: 'fa:money', icon_align: right, align: center, bold: true}
+    type: Label
+    layout_properties: {grid_position: 'YXWGHO,RBIIXF'}
+  - name: button_5
+    properties: {text: '', background: '#0000ff', foreground: 'theme:On Primary',
+      role: outlined-button, icon: 'fa:eye'}
+    type: Button
+    layout_properties: {grid_position: 'YXWGHO,BRJHGZ'}
+    event_bindings: {click: button_5_click}
   - name: label_1
     properties: {text: DRIVERS, align: center, bold: true}
     type: Label
@@ -27,7 +42,7 @@ components:
     type: Label
     layout_properties: {grid_position: 'PNFEMR,EQBSIA'}
   - name: spacer_1
-    properties: {height: 50.199981689453125}
+    properties: {height: 28.600006103515625}
     type: Spacer
     layout_properties: {grid_position: 'IZMHNF,WMSSHB'}
   - name: label_3
@@ -48,7 +63,7 @@ components:
     type: DataGrid
     components:
     - name: repeating_panel_1
-      properties: {item_template: Form1.RowTemplate1}
+      properties: {item_template: Home.RowTemplate1}
       type: RepeatingPanel
     layout_properties: {grid_position: 'ELYQIR,HHEWHY'}
   - name: data_grid_2
@@ -61,15 +76,19 @@ components:
     type: DataGrid
     components:
     - name: repeating_panel_2
-      properties: {item_template: Form1.RowTemplate2}
+      properties: {item_template: Home.RowTemplate2}
       type: RepeatingPanel
     layout_properties: {grid_position: 'ELYQIR,DACOES'}
+  - name: plot_1
+    properties: {}
+    type: Plot
+    layout_properties: {grid_position: 'VJTMLR,IOQOOG'}
 - type: FlowPanel
   properties: {}
   name: navbar_links
   layout_properties: {slot: nav-right}
 - name: column_panel_1
-  properties: {role: null, background: 'theme:Surface'}
+  properties: {role: null, background: 'theme:Surface Variant'}
   type: ColumnPanel
   layout_properties: {slot: left-nav}
   components:
@@ -79,8 +98,22 @@ components:
     type: Button
     layout_properties: {grid_position: 'OLDPPX,ZDLAPY'}
     data_bindings: []
+  - name: button_3
+    properties: {text: NEW DRIVER, background: '#0000ff', role: outlined-button, foreground: 'theme:Primary
+        Container', icon: 'fa:user-plus', icon_align: right}
+    type: Button
+    layout_properties: {grid_position: 'KOCPLA,ORKZTL'}
+  - name: button_4
+    properties: {text: NEW TRIP, background: '#0000ff', role: outlined-button, foreground: 'theme:Primary
+        Container', icon_align: right, icon: 'fa:plus-square'}
+    type: Button
+    layout_properties: {grid_position: 'BSRRNX,WGUABB'}
   - name: button_2
     properties: {text: LOG OUT, background: '#fa0000', foreground: 'theme:On Primary',
       icon: 'fa:sign-out', icon_align: right}
     type: Button
     layout_properties: {grid_position: 'AEQDIS,MHRLZQ'}
+  - name: spacer_2
+    properties: {height: 245}
+    type: Spacer
+    layout_properties: {grid_position: 'SXGWQQ,THBGHE'}
