@@ -127,6 +127,10 @@ color: %color:On Primary Container%;
   font-weight: 400;
 }
 
+.anvil-role-rounded-borders {
+  border-radius: 12px;
+}
+
 .anvil-role-headline {
   font-size: 32px;
   line-height: 40px;

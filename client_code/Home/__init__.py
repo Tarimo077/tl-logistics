@@ -3,9 +3,10 @@ from anvil import *
 import plotly.graph_objects as go
 import anvil.server
 import json
-from collections import defaultdict
+from collections import defaultdict, Counter
 from ..Password import Password
 import anvil.js
+from datetime import datetime
 
 
 class Home(HomeTemplate):
@@ -23,6 +24,7 @@ class Home(HomeTemplate):
     response = anvil.server.call('getTrips')
     text = response.get_bytes().decode('utf-8')
     trips = json.loads(text)
+    self.trips = trips
     driversNew = []
     for x in drivers:
       if x != "Joshua/Brian" or x != "NA" or x != "Patrick/Vincent" or x != "N/A":
@@ -33,14 +35,13 @@ class Home(HomeTemplate):
     self.tripCount.text = str(tripCount)
     # Step 1: Count the number of trips for each driver
     trip_count = defaultdict(int)
-    print(trips)
     grouped_data = defaultdict(list)
     for trip in trips:
       trip_count[trip['name']] += 1
       date_str = trip['date']
       if date_str:
         date = datetime.strptime(date_str[:10], '%Y-%m-%d')
-        grouped_data[date].append(entry)
+        grouped_data[date].append(trip)
 
     grouped_data = dict(sorted(grouped_data.items()))
 
@@ -80,6 +81,9 @@ class Home(HomeTemplate):
         'title': 'TRIPS'
       }
     }
+    filtered_data = [record for record in self.trips if '-' in record['location']]
+    #self.extract_top_origins_destinations(filtered_data)
+    self.extract_driver_top_origins_destinations(filtered_data)
     # Any code you write here will run before the form opens.
 
   def button_5_click(self, **event_args):
@@ -102,7 +106,7 @@ class Home(HomeTemplate):
       self.hide_cash()
 
   def view_cash(self, **event_args):
-    self.button_5.background = '#DB4437'
+    self.button_5.background = '#fa0000'
     self.button_5.icon = 'fa:eye-slash'
     self.button_5.tooltip = 'hide cash in'
     label_element = anvil.js.get_dom_node(self.moneyin)
@@ -110,9 +114,43 @@ class Home(HomeTemplate):
     self.seecash = False
 
   def hide_cash(self, **event_args):
-    self.button_5.background = '#0080FF'
+    self.button_5.background = '#0000FF'
     self.button_5.icon = 'fa:eye'
     self.button_5.tooltip = 'view cash in'
     label_element = anvil.js.get_dom_node(self.moneyin)
     label_element.style.filter = "blur(25px)"
     self.seecash = True
+
+# Function to extract top origins and destinations
+  def extract_top_origins_destinations(self, data, **event_args):
+    locations = [entry["location"] for entry in data]
+    location_counts = Counter(locations)
+    top_locations = location_counts.most_common(5)  # Change 5 to desired number of top locations
+
+    top_origins = [loc.split("-")[0] for loc, _ in top_locations]
+    top_destinations = [loc.split("-")[1] for loc, _ in top_locations]
+    print(top_origins)
+    print(top_destinations)
+
+    return top_origins, top_destinations
+
+# Function to extract each driver's top origins and destinations
+  def extract_driver_top_origins_destinations(self, data, **event_args):
+    driver_locations = {}
+    for entry in data:
+        driver = entry["name"]
+        location = entry["location"]
+        if driver not in driver_locations:
+            driver_locations[driver] = []
+        driver_locations[driver].append(location)
+
+    driver_top_origins_destinations = {}
+    for driver, locations in driver_locations.items():
+        location_counts = Counter(locations)
+        top_locations = location_counts.most_common(3)  # Change 3 to desired number of top locations per driver
+        top_origins = [loc.split("-")[0] for loc, _ in top_locations]
+        top_destinations = [loc.split("-")[1] for loc, _ in top_locations]
+        driver_top_origins_destinations[driver] = (top_origins, top_destinations)
+    print(driver_top_origins_destinations)
+
+    return driver_top_origins_destinations
