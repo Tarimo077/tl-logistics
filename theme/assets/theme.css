@@ -508,8 +508,9 @@ color: %color:On Primary Container%;
 .modal-content, body>div[data-notify="container"] {
   border-radius: 28px;
   background: linear-gradient(0deg, %color:Primary Overlay 3%, %color:Primary Overlay 3%), %color:Background%;
+  foreground: %color:#21005E;
   box-shadow: none;
-  border: none;
+  border: 10px solid #6750A4;
 }
 
 .modal-header {

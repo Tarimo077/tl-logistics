@@ -22,7 +22,7 @@ class DriverStats(DriverStatsTemplate):
       if x != "Joshua/Brian" or x != "NA" or x != "Patrick/Vincent" or x != "N/A":
         driversNew.append(x)
     driverCount = len(driversNew)
-    self.driverCount.text = driverCount
+    self.driverCount.text = str(driverCount) + " DRIVERS"
     # Step 1: Count the number of trips for each driver
     trip_count = defaultdict(int)
     grouped_data = defaultdict(list)

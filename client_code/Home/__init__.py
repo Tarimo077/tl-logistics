@@ -31,8 +31,8 @@ class Home(HomeTemplate):
         driversNew.append(x)
     driverCount = len(driversNew)
     tripCount = len(trips)
-    self.driverCount.text = driverCount
-    self.tripCount.text = tripCount
+    self.driverCount.text = str(driverCount) +" DRIVERS"
+    self.tripCount.text = str(tripCount) + " TRIPS"
     amount_generated = defaultdict(float)
     grouped_data = defaultdict(list)
     trip_count = defaultdict(int)
@@ -46,7 +46,7 @@ class Home(HomeTemplate):
 
     total_amount = sum(amount_generated.values())
     total_amount_formatted = "${:,.2f}".format(total_amount)
-    self.moneyin.text = total_amount_formatted
+    self.moneyin.text = "CASH IN: " + str(total_amount_formatted) + "\t"
     grouped_data = dict(sorted(grouped_data.items()))
 
 # Print or plot the grouped data
@@ -114,5 +114,13 @@ class Home(HomeTemplate):
   def button_1_click(self, **event_args):
     """This method is called when the button is clicked"""
     open_form('Home')
+
+  def button_6_click(self, **event_args):
+    """This method is called when the button is clicked"""
+    open_form('DriverStats')
+
+  def button_7_click(self, **event_args):
+    """This method is called when the button is clicked"""
+    open_form('TripStats')
 
 

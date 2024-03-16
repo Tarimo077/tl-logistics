@@ -9,8 +9,8 @@ components:
   layout_properties: {slot: default}
   components:
   - name: rich_text_1
-    properties: {content: '{spcdrivers1}{lbldrivers} {lbldrivers1} ', font_size: null,
-      role: rounded-borders, background: 'theme:On Primary Container', align: center}
+    properties: {content: '{lbldrivers}', font_size: null, role: rounded-borders,
+      background: 'theme:On Primary Container', align: center}
     type: RichText
     layout_properties: {grid_position: 'EFYFJP,IXPFUN', full_width_row: true}
     components:
@@ -24,11 +24,6 @@ components:
       properties: {height: 6.79998779296875}
       type: Spacer
       layout_properties: {slot: spcdrivers1, width: -60.4375244140625}
-    - name: label_6
-      properties: {text: TRIPS, foreground: 'theme:On Primary', align: center, bold: true,
-        font_size: 26}
-      type: Label
-      layout_properties: {slot: lbldrivers1}
   - name: spacer_1
     properties: {height: 32}
     type: Spacer

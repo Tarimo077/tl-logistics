@@ -13,7 +13,7 @@ class TripStats(TripStatsTemplate):
     text = response.get_bytes().decode('utf-8')
     trips = json.loads(text)
     self.trips = trips
-    self.tripCount.text = str(len(trips)) 
+    self.tripCount.text = str(len(trips)) + " TRIPS"
     filtered_data = [record for record in self.trips if '-' in record['location']]
     obj = self.extract_top_origins_destinations(filtered_data)
     self.repeating_panel_1.items = obj
