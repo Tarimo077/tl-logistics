@@ -52,7 +52,7 @@ class Home(HomeTemplate):
 # Print or plot the grouped data
     dates = list(grouped_data.keys())
     counts = [len(group) for group in grouped_data.values()]
-    primary_color = '#0000FF'
+    primary_color = '#6750A4'
     self.plot_1.data = go.Bar(x=dates, y=counts, marker=dict(color=primary_color),
                         hovertemplate='<b>%{x}</b><br>' + 'Trips: %{y}')
     # Configure the plot layout
@@ -88,7 +88,7 @@ class Home(HomeTemplate):
       self.hide_cash()
 
   def view_cash(self, **event_args):
-    self.button_5.background = '#fa0000'
+    self.button_5.background = '#ff0000'
     self.button_5.icon = 'fa:eye-slash'
     self.button_5.tooltip = 'hide cash in'
     label_element = anvil.js.get_dom_node(self.moneyin)
@@ -96,7 +96,7 @@ class Home(HomeTemplate):
     self.seecash = False
 
   def hide_cash(self, **event_args):
-    self.button_5.background = '#0000FF'
+    self.button_5.background = '#6750A4'
     self.button_5.icon = 'fa:eye'
     self.button_5.tooltip = 'view cash in'
     label_element = anvil.js.get_dom_node(self.moneyin)

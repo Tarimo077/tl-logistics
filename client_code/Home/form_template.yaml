@@ -4,40 +4,60 @@ container:
   properties: {html: '@theme:standard-page.html', background: 'theme:On Tertiary'}
 components:
 - type: ColumnPanel
-  properties: {col_widths: '{"RBIIXF":55,"BRJHGZ":5}'}
+  properties: {col_widths: '{"RBIIXF":55}'}
   name: content_panel
   layout_properties: {slot: default}
   components:
-  - name: label_5
-    properties: {text: CASH IN, align: center, bold: true}
-    type: Label
-    layout_properties: {grid_position: 'JEWFGW,URIPDR'}
-  - name: moneyin
-    properties: {role: rounded-borders, align: center, foreground: 'theme:Primary
-        Container', text: '', font_size: 32, icon_align: left, background: '#0000ff',
-      bold: true, icon: 'fa:money'}
-    type: Label
-    layout_properties: {grid_position: 'YXWGHO,RBIIXF'}
-  - name: button_5
-    properties: {text: '', background: '#0000ff', foreground: 'theme:On Primary',
-      role: outlined-button, icon: 'fa:eye', spacing_above: medium}
-    type: Button
-    layout_properties: {grid_position: 'YXWGHO,BRJHGZ'}
-    event_bindings: {click: button_5_click}
+  - name: rich_text_3
+    properties: {content: '{lbldesc}{spacerCashin}{lblcashin} {spacercashin2} {btncashin}',
+      background: 'theme:On Primary Container', role: rounded-borders, align: center}
+    type: RichText
+    layout_properties: {grid_position: 'YXWGHO,RBIIXF', full_width_row: true}
+    components:
+    - name: spacer_8
+      properties: {height: 6.600006103515625}
+      type: Spacer
+      layout_properties: {slot: spacerCash, width: 140.19998168945312}
+    - name: moneyin
+      properties: {role: rounded-borders, align: center, foreground: 'theme:Primary
+          Container', text: '', font_size: 32, icon_align: left, background: 'theme:On
+          Primary Container', bold: true, icon: 'fa:money'}
+      type: Label
+      layout_properties: {slot: lblcashin}
+    - name: button_5
+      properties: {text: '', background: 'theme:Primary', foreground: 'theme:On Primary',
+        role: outlined-button, icon: 'fa:eye', spacing_above: medium, align: center}
+      type: Button
+      layout_properties: {slot: btncashin}
+      event_bindings: {click: button_5_click}
+    - name: spacer_9
+      properties: {height: 9.79998779296875}
+      type: Spacer
+      layout_properties: {slot: spacercashin2, width: 443.974951171875}
+    - name: label_5
+      properties: {text: CASH IN, align: center, bold: true, foreground: 'theme:Primary
+          Container'}
+      type: Label
+      layout_properties: {slot: lbldesc}
+    - name: spacer_10
+      properties: {height: 12.79998779296875}
+      type: Spacer
+      layout_properties: {slot: spacerCashin, width: 268.9249633789062}
   - name: spacer_7
     properties: {height: 32}
     type: Spacer
     layout_properties: {grid_position: 'HUERZT,HOASLA'}
   - name: rich_text_1
     properties: {content: '{spcdrivers1}{lbldrivers} {lbldrivers1} {spcdrivers}{btndrivers}',
-      font_size: null, role: rounded-borders, background: '#0000ff'}
+      font_size: null, role: rounded-borders, background: 'theme:On Primary Container',
+      align: center}
     type: RichText
-    layout_properties: {grid_position: 'NFNGJB,NWCCLS'}
+    layout_properties: {grid_position: 'NFNGJB,NWCCLS', full_width_row: true}
     components:
     - name: driverCount
       properties: {role: rounded-borders, align: center, foreground: 'theme:Primary
           Container', font_size: 26, spacing_above: none, icon_align: left, spacing_below: none,
-        background: '#0000ff', bold: true, icon: 'fa:group'}
+        background: 'theme:On Primary Container', bold: true, icon: 'fa:group'}
       type: Label
       layout_properties: {slot: lbldrivers, width: null}
     - name: spacer_3
@@ -45,8 +65,8 @@ components:
       type: Spacer
       layout_properties: {slot: spcdrivers, width: 102.9625}
     - name: button_6
-      properties: {text: SEE DRIVERS, role: outlined-button, background: '#fa0000',
-        foreground: 'theme:On Primary'}
+      properties: {text: SEE DRIVERS, role: rounded-borders, background: 'theme:Primary',
+        foreground: 'theme:On Primary', border: ''}
       type: Button
       layout_properties: {slot: btndrivers}
     - name: spacer_4
@@ -60,17 +80,18 @@ components:
       layout_properties: {slot: lbldrivers1}
   - name: rich_text_2
     properties: {content: '{spctrips1}{lbltrips}  {lbltrips1} {spctrips}{btntrips}',
-      background: '#0000ff', role: rounded-borders}
+      background: 'theme:On Primary Container', role: rounded-borders, align: center}
     type: RichText
-    layout_properties: {grid_position: 'NFNGJB,CJRFYT'}
+    layout_properties: {grid_position: 'NFNGJB,CJRFYT', full_width_row: true}
     components:
     - name: spacer_5
       properties: {height: 3}
       type: Spacer
       layout_properties: {slot: spctrips1, width: 40}
     - name: tripCount
-      properties: {background: '#0000ff', foreground: 'theme:Primary Container', role: rounded-borders,
-        icon: 'fa:truck', align: center, bold: true, font_size: 26, border: ''}
+      properties: {background: 'theme:On Primary Container', foreground: 'theme:Primary
+          Container', role: rounded-borders, icon: 'fa:truck', align: center, bold: true,
+        font_size: 26, border: ''}
       type: Label
       layout_properties: {slot: lbltrips}
     - name: spacer_6
@@ -78,7 +99,7 @@ components:
       type: Spacer
       layout_properties: {slot: spctrips, width: 138.1499755859375}
     - name: button_7
-      properties: {text: SEE TRIPS, role: outlined-button, background: '#fa0000',
+      properties: {text: SEE TRIPS, role: rounded-borders, background: 'theme:Primary',
         foreground: 'theme:On Primary'}
       type: Button
       layout_properties: {slot: btntrips}
@@ -94,7 +115,7 @@ components:
   - name: plot_1
     properties: {}
     type: Plot
-    layout_properties: {grid_position: 'VJTMLR,IOQOOG'}
+    layout_properties: {grid_position: 'VJTMLR,IOQOOG', full_width_row: true}
 - type: FlowPanel
   properties: {}
   name: navbar_links
@@ -105,26 +126,28 @@ components:
   layout_properties: {slot: left-nav}
   components:
   - name: button_1
-    properties: {text: HOME, background: '#001eff', foreground: 'theme:Primary Container',
-      role: tonal-button, icon: 'fa:home', icon_align: right, align: full}
+    properties: {text: HOME, background: 'theme:Primary', foreground: 'theme:Primary
+        Container', role: tonal-button, icon: 'fa:home', icon_align: right, align: full}
     type: Button
     layout_properties: {grid_position: 'OLDPPX,ZDLAPY', full_width_row: false}
     data_bindings: []
     event_bindings: {click: button_1_click}
   - name: button_3
-    properties: {text: DRIVERS, background: '#0000ff', role: outlined-button, foreground: 'theme:Primary
-        Container', icon: 'fa:group', icon_align: right, align: full}
+    properties: {text: DRIVERS, background: 'theme:Primary', role: outlined-button,
+      foreground: 'theme:Primary Container', icon: 'fa:group', icon_align: right,
+      align: full}
     type: Button
     layout_properties: {grid_position: 'KOCPLA,ORKZTL', full_width_row: false}
     event_bindings: {click: button_3_click}
   - name: button_4
-    properties: {text: TRIPS, background: '#0000ff', role: outlined-button, foreground: 'theme:Primary
-        Container', icon_align: right, icon: 'fa:truck', align: full}
+    properties: {text: TRIPS, background: 'theme:Primary', role: outlined-button,
+      foreground: 'theme:Primary Container', icon_align: right, icon: 'fa:truck',
+      align: full}
     type: Button
     layout_properties: {grid_position: 'BSRRNX,WGUABB', full_width_row: false}
     event_bindings: {click: button_4_click}
   - name: button_2
-    properties: {text: LOG OUT, background: '#fa0000', foreground: 'theme:On Primary',
+    properties: {text: LOG OUT, background: '#ff0000', foreground: 'theme:On Primary',
       icon: 'fa:sign-out', icon_align: right, align: full}
     type: Button
     layout_properties: {grid_position: 'AEQDIS,MHRLZQ', full_width_row: false}

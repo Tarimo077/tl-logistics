@@ -10,20 +10,20 @@ components:
   components:
   - name: rich_text_1
     properties: {content: '{spcdrivers1}{lbldrivers} {lbldrivers1} ', font_size: null,
-      role: rounded-borders, background: '#0000ff'}
+      role: rounded-borders, background: 'theme:On Primary Container', align: center}
     type: RichText
-    layout_properties: {grid_position: 'FPMNCO,IWTDMC'}
+    layout_properties: {grid_position: 'FPMNCO,IWTDMC', full_width_row: true}
     components:
     - name: driverCount
       properties: {role: rounded-borders, align: center, foreground: 'theme:Primary
           Container', font_size: 26, spacing_above: none, icon_align: left, spacing_below: none,
-        background: '#0000ff', bold: true, icon: 'fa:group'}
+        background: 'theme:On Primary Container', bold: true, icon: 'fa:group'}
       type: Label
       layout_properties: {slot: lbldrivers, width: null}
     - name: spacer_4
       properties: {height: 6.79998779296875}
       type: Spacer
-      layout_properties: {slot: spcdrivers1, width: 373.20001220703125}
+      layout_properties: {slot: spcdrivers1, width: -14.000012207031261}
     - name: label_6
       properties: {text: DRIVERS, foreground: 'theme:On Primary', align: center, bold: true,
         font_size: 26}
@@ -32,25 +32,26 @@ components:
   - name: spacer_3
     properties: {height: 32}
     type: Spacer
-    layout_properties: {grid_position: 'AZLGOD,ZESPKE'}
+    layout_properties: {grid_position: 'AZLGOD,ZESPKE', full_width_row: true}
   - name: search
-    properties: {role: outlined, placeholder: search drivers by name..., align: right}
+    properties: {role: outlined, placeholder: search drivers by name..., align: right,
+      foreground: '', background: ''}
     type: TextBox
-    layout_properties: {grid_position: 'AZLGOD,QEGURP RVSUYA,WVBXUD', full_width_row: false}
+    layout_properties: {grid_position: 'AZLGOD,QEGURP RVSUYA,WVBXUD', full_width_row: true}
     event_bindings: {change: search_change}
   - name: result_label
     properties: {spacing_above: none, spacing_below: none, align: right, italic: true,
       foreground: '#fa0000', role: null}
     type: Label
-    layout_properties: {grid_position: 'AZLGOD,QEGURP KOWHIN,WHBSWM'}
+    layout_properties: {grid_position: 'AZLGOD,QEGURP KOWHIN,WHBSWM', full_width_row: true}
   - name: label_1
     properties: {text: TOP DRIVERS BY TRIPS, align: center, bold: true}
     type: Label
-    layout_properties: {grid_position: 'XIJJVO,ZVBAQS'}
+    layout_properties: {grid_position: 'XIJJVO,ZVBAQS', full_width_row: true}
   - name: label_4
     properties: {text: TOP INCOME GENERATORS, align: center, bold: true}
     type: Label
-    layout_properties: {grid_position: 'XIJJVO,KIQUVB'}
+    layout_properties: {grid_position: 'XIJJVO,KIQUVB', full_width_row: true}
   - name: data_grid_1
     properties:
       columns:
@@ -58,8 +59,9 @@ components:
       - {id: VJQQOR, title: Trips, data_key: trips}
       role: tonal-data-grid
       rows_per_page: 10
+      background: theme:On Primary Container
     type: DataGrid
-    layout_properties: {grid_position: 'PSWWUB,CUNTWD'}
+    layout_properties: {grid_position: 'PSWWUB,CUNTWD', full_width_row: true}
     components:
     - name: repeating_panel_1
       properties: {item_template: Home.RowTemplate1}
@@ -71,8 +73,9 @@ components:
       - {id: VJQQOR, title: Amount, data_key: amount}
       role: tonal-data-grid
       rows_per_page: 10
+      background: theme:On Primary Container
     type: DataGrid
-    layout_properties: {grid_position: 'PSWWUB,NMGGDP'}
+    layout_properties: {grid_position: 'PSWWUB,NMGGDP', full_width_row: true}
     components:
     - name: repeating_panel_2
       properties: {item_template: Home.RowTemplate2}
@@ -84,11 +87,11 @@ components:
   - name: label_2
     properties: {text: TOP DRIVER DESTINATIONS, align: center, bold: true}
     type: Label
-    layout_properties: {grid_position: 'NVFKQA,QTYHFD'}
+    layout_properties: {grid_position: 'NVFKQA,QTYHFD', full_width_row: true}
   - name: label_3
     properties: {text: TOP DRIVER ORIGINS, align: center, bold: true}
     type: Label
-    layout_properties: {grid_position: 'NVFKQA,ICLQJQ'}
+    layout_properties: {grid_position: 'NVFKQA,ICLQJQ', full_width_row: true}
   - name: data_grid_3
     properties:
       columns:
@@ -96,12 +99,13 @@ components:
       - {id: VJQQOR, title: Destinations, data_key: destinations}
       rows_per_page: 10
       role: tonal-data-grid
+      background: theme:On Primary Container
     type: DataGrid
     components:
     - name: repeating_panel_3
       properties: {item_template: DriverStats.RowTemplate3}
       type: RepeatingPanel
-    layout_properties: {grid_position: 'NATDHY,QVYPAW'}
+    layout_properties: {grid_position: 'NATDHY,QVYPAW', full_width_row: true}
   - name: data_grid_4
     properties:
       columns:
@@ -109,12 +113,13 @@ components:
       - {id: VJQQOR, title: Origins, data_key: origins}
       rows_per_page: 10
       role: tonal-data-grid
+      background: theme:On Primary Container
     type: DataGrid
     components:
     - name: repeating_panel_4
       properties: {item_template: DriverStats.RowTemplate4}
       type: RepeatingPanel
-    layout_properties: {grid_position: 'NATDHY,BOGMXB'}
+    layout_properties: {grid_position: 'NATDHY,BOGMXB', full_width_row: true}
 - type: FlowPanel
   properties: {}
   name: navbar_links
@@ -125,26 +130,28 @@ components:
   layout_properties: {slot: left-nav}
   components:
   - name: button_1
-    properties: {text: HOME, background: '#001eff', foreground: 'theme:Primary Container',
-      role: tonal-button, icon: 'fa:home', icon_align: right, align: full}
+    properties: {text: HOME, background: 'theme:Primary', foreground: 'theme:Primary
+        Container', role: tonal-button, icon: 'fa:home', icon_align: right, align: full}
     type: Button
     layout_properties: {grid_position: 'OLDPPX,ZDLAPY'}
     data_bindings: []
     event_bindings: {click: button_1_click}
   - name: button_3
-    properties: {text: DRIVERS, background: '#0000ff', role: outlined-button, foreground: 'theme:Primary
-        Container', icon: 'fa:group', icon_align: right, align: full}
+    properties: {text: DRIVERS, background: 'theme:Primary', role: outlined-button,
+      foreground: 'theme:Primary Container', icon: 'fa:group', icon_align: right,
+      align: full}
     type: Button
     layout_properties: {grid_position: 'KOCPLA,ORKZTL'}
     event_bindings: {click: button_3_click}
   - name: button_4
-    properties: {text: TRIPS, background: '#0000ff', role: outlined-button, foreground: 'theme:Primary
-        Container', icon_align: right, icon: 'fa:truck', align: full}
+    properties: {text: TRIPS, background: 'theme:Primary', role: outlined-button,
+      foreground: 'theme:Primary Container', icon_align: right, icon: 'fa:truck',
+      align: full}
     type: Button
     layout_properties: {grid_position: 'BSRRNX,WGUABB'}
     event_bindings: {click: button_4_click}
   - name: button_2
-    properties: {text: LOG OUT, background: '#fa0000', foreground: 'theme:On Primary',
+    properties: {text: LOG OUT, background: '#ff0000', foreground: 'theme:On Primary',
       icon: 'fa:sign-out', icon_align: right, align: full}
     type: Button
     layout_properties: {grid_position: 'AEQDIS,MHRLZQ'}
