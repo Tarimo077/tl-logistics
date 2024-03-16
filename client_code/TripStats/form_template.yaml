@@ -1,0 +1,65 @@
+is_package: true
+container:
+  type: HtmlTemplate
+  properties: {html: '@theme:standard-page.html'}
+components:
+- type: ColumnPanel
+  properties: {}
+  name: content_panel
+  layout_properties: {slot: default}
+  components:
+  - name: rich_text_1
+    properties: {content: '{spcdrivers1}{lbldrivers} {lbldrivers1} ', font_size: null,
+      role: rounded-borders, background: '#0000ff'}
+    type: RichText
+    layout_properties: {grid_position: 'EFYFJP,IXPFUN'}
+    components:
+    - name: tripCount
+      properties: {role: rounded-borders, align: center, foreground: 'theme:Primary
+          Container', font_size: 26, spacing_above: none, icon_align: left, spacing_below: none,
+        background: '#0000ff', bold: true, icon: 'fa:truck'}
+      type: Label
+      layout_properties: {slot: lbldrivers, width: null}
+    - name: spacer_4
+      properties: {height: 6.79998779296875}
+      type: Spacer
+      layout_properties: {slot: spcdrivers1, width: 373.20001220703125}
+    - name: label_6
+      properties: {text: TRIPS, foreground: 'theme:On Primary', align: center, bold: true,
+        font_size: 26}
+      type: Label
+      layout_properties: {slot: lbldrivers1}
+- type: FlowPanel
+  properties: {}
+  name: navbar_links
+  layout_properties: {slot: nav-right}
+- name: column_panel_1
+  properties: {role: null, background: 'theme:Surface Variant'}
+  type: ColumnPanel
+  layout_properties: {slot: left-nav}
+  components:
+  - name: button_1
+    properties: {text: HOME, background: '#001eff', foreground: 'theme:Primary Container',
+      role: tonal-button, icon: 'fa:home', icon_align: right, align: full}
+    type: Button
+    layout_properties: {grid_position: 'OLDPPX,ZDLAPY'}
+    data_bindings: []
+  - name: button_3
+    properties: {text: DRIVERS, background: '#0000ff', role: outlined-button, foreground: 'theme:Primary
+        Container', icon: 'fa:group', icon_align: right, align: full}
+    type: Button
+    layout_properties: {grid_position: 'KOCPLA,ORKZTL'}
+  - name: button_4
+    properties: {text: TRIPS, background: '#0000ff', role: outlined-button, foreground: 'theme:Primary
+        Container', icon_align: right, icon: 'fa:truck', align: full}
+    type: Button
+    layout_properties: {grid_position: 'BSRRNX,WGUABB'}
+  - name: button_2
+    properties: {text: LOG OUT, background: '#fa0000', foreground: 'theme:On Primary',
+      icon: 'fa:sign-out', icon_align: right, align: full}
+    type: Button
+    layout_properties: {grid_position: 'AEQDIS,MHRLZQ'}
+  - name: spacer_2
+    properties: {height: 245}
+    type: Spacer
+    layout_properties: {grid_position: 'SXGWQQ,THBGHE'}
