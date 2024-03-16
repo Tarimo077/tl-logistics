@@ -4,10 +4,45 @@ container:
   properties: {html: '@theme:standard-page.html'}
 components:
 - type: ColumnPanel
-  properties: {}
+  properties: {col_widths: '{"ZESPKE":45,"QEGURP":15}'}
   name: content_panel
   layout_properties: {slot: default}
   components:
+  - name: rich_text_1
+    properties: {content: '{spcdrivers1}{lbldrivers} {lbldrivers1} ', font_size: null,
+      role: rounded-borders, background: '#0000ff'}
+    type: RichText
+    layout_properties: {grid_position: 'FPMNCO,IWTDMC'}
+    components:
+    - name: driverCount
+      properties: {role: rounded-borders, align: center, foreground: 'theme:Primary
+          Container', font_size: 26, spacing_above: none, icon_align: left, spacing_below: none,
+        background: '#0000ff', bold: true, icon: 'fa:group'}
+      type: Label
+      layout_properties: {slot: lbldrivers, width: null}
+    - name: spacer_4
+      properties: {height: 6.79998779296875}
+      type: Spacer
+      layout_properties: {slot: spcdrivers1, width: 373.20001220703125}
+    - name: label_6
+      properties: {text: DRIVERS, foreground: 'theme:On Primary', align: center, bold: true,
+        font_size: 26}
+      type: Label
+      layout_properties: {slot: lbldrivers1}
+  - name: spacer_3
+    properties: {height: 32}
+    type: Spacer
+    layout_properties: {grid_position: 'AZLGOD,ZESPKE'}
+  - name: search
+    properties: {role: outlined, placeholder: search drivers by name..., align: right}
+    type: TextBox
+    layout_properties: {grid_position: 'AZLGOD,QEGURP RVSUYA,WVBXUD', full_width_row: false}
+    event_bindings: {change: search_change}
+  - name: result_label
+    properties: {spacing_above: none, spacing_below: none, align: right, italic: true,
+      foreground: '#fa0000', role: null}
+    type: Label
+    layout_properties: {grid_position: 'AZLGOD,QEGURP KOWHIN,WHBSWM'}
   - name: label_1
     properties: {text: TOP DRIVERS BY TRIPS, align: center, bold: true}
     type: Label

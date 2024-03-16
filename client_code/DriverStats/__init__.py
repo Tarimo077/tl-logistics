@@ -22,6 +22,7 @@ class DriverStats(DriverStatsTemplate):
       if x != "Joshua/Brian" or x != "NA" or x != "Patrick/Vincent" or x != "N/A":
         driversNew.append(x)
     driverCount = len(driversNew)
+    self.driverCount.text = driverCount
     # Step 1: Count the number of trips for each driver
     trip_count = defaultdict(int)
     grouped_data = defaultdict(list)
@@ -53,6 +54,8 @@ class DriverStats(DriverStatsTemplate):
     ranked_drivers_average = [{'name': driver, 'average_amount': f"${avg_amount:.2f}"} for driver, avg_amount in sorted(average_amount_per_trip.items(), key=lambda x: x[1], reverse=True)]
     self.repeating_panel_1.items = ranked_drivers_trips
     self.repeating_panel_2.items = ranked_drivers_amount
+    self.ranked_drivers_amount = ranked_drivers_amount
+    self.ranked_drivers_trips = ranked_drivers_trips
     filtered_data = [record for record in self.trips if '-' in record['location']]
     #self.extract_top_origins_destinations(filtered_data)
     self.extract_driver_top_origins_destinations(filtered_data)
@@ -100,3 +103,31 @@ class DriverStats(DriverStatsTemplate):
       driver_top_destinations.append(top_destinations)
     self.repeating_panel_3.items = driver_top_destinations
     self.repeating_panel_4.items = driver_top_origins
+    self.driver_top_destinations = driver_top_destinations
+    self.driver_top_origins = driver_top_origins
+
+  def search_change(self, **event_args):
+    """This method is called when the text in this text box is edited"""
+    search_text = self.search.text
+    if search_text == "":
+      self.repeating_panel_1.items = self.ranked_drivers_trips
+      self.repeating_panel_2.items = self.ranked_drivers_amount
+      self.repeating_panel_3.items = self.driver_top_destinations
+      self.repeating_panel_4.items = self.driver_top_origins
+      self.result_label.visible = False
+    else:
+      leng = len(search_text)
+      filtered_objects1 = [obj for obj in self.ranked_drivers_trips if obj['name'][:leng].lower() == search_text.lower()]
+      filtered_objects2 = [obj for obj in self.ranked_drivers_amount if obj['name'][:leng].lower() == search_text.lower()]
+      filtered_objects3 = [obj for obj in self.driver_top_destinations if obj['driver'][:leng].lower() == search_text.lower()]
+      filtered_objects4 = [obj for obj in self.driver_top_origins if obj['driver'][:leng].lower() == search_text.lower()]
+      self.repeating_panel_1.items = filtered_objects1
+      self.repeating_panel_2.items = filtered_objects2
+      self.repeating_panel_3.items = filtered_objects3
+      self.repeating_panel_4.items = filtered_objects4
+      nm = len(self.repeating_panel_1.items)
+      self.result_label.visible = True
+      if nm == 1:
+        self.result_label.text = 'showing '+str(nm)+' result'
+      else:
+        self.result_label.text = 'showing '+str(nm)+' results'
