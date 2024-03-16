@@ -29,17 +29,26 @@ components:
         font_size: 26}
       type: Label
       layout_properties: {slot: lbldrivers1}
+  - name: spacer_1
+    properties: {height: 32}
+    type: Spacer
+    layout_properties: {grid_position: 'NSYRVE,ALGBPH'}
   - name: data_grid_1
     properties:
       columns:
-      - {id: JKSDUP, title: Origins, data_key: origins}
-      - {id: VJQQOR, title: Destinations, data_key: destinations}
+      - {id: JKSDUP, title: Top Origins, data_key: origin}
+      - {id: VJQQOR, title: Top Destinations, data_key: destination}
+      role: tonal-data-grid
+      rows_per_page: 5
     type: DataGrid
     components:
     - name: repeating_panel_1
       properties: {item_template: TripStats.RowTemplate5}
       type: RepeatingPanel
-    layout_properties: {grid_position: 'MEXKUR,EYFGFH'}
+      layout_properties: {pinned: false}
+      data_bindings:
+      - {property: tag, code: self.item, writeback: false}
+    layout_properties: {grid_position: 'MEXKUR,EYFGFH', full_width_row: true}
 - type: FlowPanel
   properties: {}
   name: navbar_links
@@ -55,16 +64,19 @@ components:
     type: Button
     layout_properties: {grid_position: 'OLDPPX,ZDLAPY'}
     data_bindings: []
+    event_bindings: {click: button_1_click}
   - name: button_3
     properties: {text: DRIVERS, background: '#0000ff', role: outlined-button, foreground: 'theme:Primary
         Container', icon: 'fa:group', icon_align: right, align: full}
     type: Button
     layout_properties: {grid_position: 'KOCPLA,ORKZTL'}
+    event_bindings: {click: button_3_click}
   - name: button_4
     properties: {text: TRIPS, background: '#0000ff', role: outlined-button, foreground: 'theme:Primary
         Container', icon_align: right, icon: 'fa:truck', align: full}
     type: Button
     layout_properties: {grid_position: 'BSRRNX,WGUABB'}
+    event_bindings: {click: button_4_click}
   - name: button_2
     properties: {text: LOG OUT, background: '#fa0000', foreground: 'theme:On Primary',
       icon: 'fa:sign-out', icon_align: right, align: full}

@@ -130,16 +130,19 @@ components:
     type: Button
     layout_properties: {grid_position: 'OLDPPX,ZDLAPY'}
     data_bindings: []
+    event_bindings: {click: button_1_click}
   - name: button_3
     properties: {text: DRIVERS, background: '#0000ff', role: outlined-button, foreground: 'theme:Primary
         Container', icon: 'fa:group', icon_align: right, align: full}
     type: Button
     layout_properties: {grid_position: 'KOCPLA,ORKZTL'}
+    event_bindings: {click: button_3_click}
   - name: button_4
     properties: {text: TRIPS, background: '#0000ff', role: outlined-button, foreground: 'theme:Primary
         Container', icon_align: right, icon: 'fa:truck', align: full}
     type: Button
     layout_properties: {grid_position: 'BSRRNX,WGUABB'}
+    event_bindings: {click: button_4_click}
   - name: button_2
     properties: {text: LOG OUT, background: '#fa0000', foreground: 'theme:On Primary',
       icon: 'fa:sign-out', icon_align: right, align: full}

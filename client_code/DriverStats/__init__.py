@@ -78,6 +78,10 @@ class DriverStats(DriverStatsTemplate):
 # Function to extract each driver's top origins and destinations
   def extract_driver_top_origins_destinations(self, data, **event_args):
     driver_locations = {}
+    all_origins = []
+    all_destinations = []
+
+    # Collect all locations for each driver
     for entry in data:
         driver = entry["name"]
         location = entry["location"]
@@ -88,19 +92,25 @@ class DriverStats(DriverStatsTemplate):
     driver_top_origins = []
     driver_top_destinations = []
 
+    # Iterate over each driver's locations
     for driver, locations in driver_locations.items():
-      location_counts = Counter(locations)
-      top_locations = location_counts.most_common(5)  # Change 3 to desired number of top locations per driver
-      top_origins = {
-        'driver': driver,
-        'origins': [loc.split("-")[0] for loc, _ in top_locations]
-        }
-      top_destinations = {
-        'driver': driver,
-        'destinations': [loc.split("-")[1] for loc, _ in top_locations]
-        }
-      driver_top_origins.append(top_origins)
-      driver_top_destinations.append(top_destinations)
+        # Count occurrences of each location for the driver
+        location_counts = Counter(locations)
+        top_locations = location_counts.most_common(5)  # Change 5 to desired number of top locations per driver
+
+        # Extract top origins and destinations
+        top_origins = [loc.split("-")[0] for loc, _ in top_locations]
+        top_destinations = [loc.split("-")[1] for loc, _ in top_locations]
+
+        # Select top 5 unique origins and destinations
+        unique_origins = list(set(top_origins))[:5]
+        unique_destinations = list(set(top_destinations))[:5]
+
+        # Append to the list of driver top origins and destinations
+        driver_top_origins.append({'driver': driver, 'origins': unique_origins})
+        driver_top_destinations.append({'driver': driver, 'destinations': unique_destinations})
+
+    # Set items for repeating panels
     self.repeating_panel_3.items = driver_top_destinations
     self.repeating_panel_4.items = driver_top_origins
     self.driver_top_destinations = driver_top_destinations
@@ -131,3 +141,15 @@ class DriverStats(DriverStatsTemplate):
         self.result_label.text = 'showing '+str(nm)+' result'
       else:
         self.result_label.text = 'showing '+str(nm)+' results'
+
+  def button_1_click(self, **event_args):
+    """This method is called when the button is clicked"""
+    open_form('Home')
+
+  def button_3_click(self, **event_args):
+    """This method is called when the button is clicked"""
+    open_form('DriverStats')
+
+  def button_4_click(self, **event_args):
+    """This method is called when the button is clicked"""
+    open_form('TripStats')
