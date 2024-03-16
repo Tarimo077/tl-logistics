@@ -29,6 +29,17 @@ components:
         font_size: 26}
       type: Label
       layout_properties: {slot: lbldrivers1}
+  - name: data_grid_1
+    properties:
+      columns:
+      - {id: JKSDUP, title: Origins, data_key: origins}
+      - {id: VJQQOR, title: Destinations, data_key: destinations}
+    type: DataGrid
+    components:
+    - name: repeating_panel_1
+      properties: {item_template: TripStats.RowTemplate5}
+      type: RepeatingPanel
+    layout_properties: {grid_position: 'MEXKUR,EYFGFH'}
 - type: FlowPanel
   properties: {}
   name: navbar_links

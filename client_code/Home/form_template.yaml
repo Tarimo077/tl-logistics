@@ -121,6 +121,7 @@ components:
         Container', icon_align: right, icon: 'fa:truck', align: full}
     type: Button
     layout_properties: {grid_position: 'BSRRNX,WGUABB', full_width_row: false}
+    event_bindings: {click: button_4_click}
   - name: button_2
     properties: {text: LOG OUT, background: '#fa0000', foreground: 'theme:On Primary',
       icon: 'fa:sign-out', icon_align: right, align: full}
