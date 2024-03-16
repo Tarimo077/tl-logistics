@@ -24,14 +24,6 @@ components:
     type: Button
     layout_properties: {grid_position: 'YXWGHO,BRJHGZ'}
     event_bindings: {click: button_5_click}
-  - name: label_1
-    properties: {text: DRIVERS, align: center, bold: true, visible: false}
-    type: Label
-    layout_properties: {grid_position: 'YIDARE,KNCMKG'}
-  - name: label_2
-    properties: {text: TRIPS, align: center, bold: true, visible: false}
-    type: Label
-    layout_properties: {grid_position: 'YIDARE,UJSVFR'}
   - name: spacer_7
     properties: {height: 32}
     type: Spacer
@@ -99,40 +91,6 @@ components:
     properties: {height: 28.600006103515625}
     type: Spacer
     layout_properties: {grid_position: 'IZMHNF,WMSSHB'}
-  - name: label_3
-    properties: {text: TOP DRIVERS BY TRIPS, align: center, bold: true}
-    type: Label
-    layout_properties: {grid_position: 'XZAXAB,AYDMIV'}
-  - name: label_4
-    properties: {text: TOP INCOME GENERATORS, align: center, bold: true}
-    type: Label
-    layout_properties: {grid_position: 'XZAXAB,FTARFE'}
-  - name: data_grid_1
-    properties:
-      columns:
-      - {id: JKSDUP, title: Name, data_key: name}
-      - {id: VJQQOR, title: Trips, data_key: trips}
-      role: tonal-data-grid
-      rows_per_page: 10
-    type: DataGrid
-    components:
-    - name: repeating_panel_1
-      properties: {item_template: Home.RowTemplate1}
-      type: RepeatingPanel
-    layout_properties: {grid_position: 'ELYQIR,HHEWHY'}
-  - name: data_grid_2
-    properties:
-      columns:
-      - {id: JKSDUP, title: Name, data_key: name}
-      - {id: VJQQOR, title: Amount, data_key: amount}
-      role: tonal-data-grid
-      rows_per_page: 10
-    type: DataGrid
-    components:
-    - name: repeating_panel_2
-      properties: {item_template: Home.RowTemplate2}
-      type: RepeatingPanel
-    layout_properties: {grid_position: 'ELYQIR,DACOES'}
   - name: plot_1
     properties: {}
     type: Plot
@@ -148,25 +106,26 @@ components:
   components:
   - name: button_1
     properties: {text: HOME, background: '#001eff', foreground: 'theme:Primary Container',
-      role: tonal-button, icon: 'fa:home', icon_align: right}
+      role: tonal-button, icon: 'fa:home', icon_align: right, align: full}
     type: Button
-    layout_properties: {grid_position: 'OLDPPX,ZDLAPY'}
+    layout_properties: {grid_position: 'OLDPPX,ZDLAPY', full_width_row: false}
     data_bindings: []
   - name: button_3
-    properties: {text: NEW DRIVER, background: '#0000ff', role: outlined-button, foreground: 'theme:Primary
-        Container', icon: 'fa:user-plus', icon_align: right}
+    properties: {text: DRIVERS, background: '#0000ff', role: outlined-button, foreground: 'theme:Primary
+        Container', icon: 'fa:group', icon_align: right, align: full}
     type: Button
-    layout_properties: {grid_position: 'KOCPLA,ORKZTL'}
+    layout_properties: {grid_position: 'KOCPLA,ORKZTL', full_width_row: false}
+    event_bindings: {click: button_3_click}
   - name: button_4
-    properties: {text: NEW TRIP, background: '#0000ff', role: outlined-button, foreground: 'theme:Primary
-        Container', icon_align: right, icon: 'fa:plus-square'}
+    properties: {text: TRIPS, background: '#0000ff', role: outlined-button, foreground: 'theme:Primary
+        Container', icon_align: right, icon: 'fa:truck', align: full}
     type: Button
-    layout_properties: {grid_position: 'BSRRNX,WGUABB'}
+    layout_properties: {grid_position: 'BSRRNX,WGUABB', full_width_row: false}
   - name: button_2
     properties: {text: LOG OUT, background: '#fa0000', foreground: 'theme:On Primary',
-      icon: 'fa:sign-out', icon_align: right}
+      icon: 'fa:sign-out', icon_align: right, align: full}
     type: Button
-    layout_properties: {grid_position: 'AEQDIS,MHRLZQ'}
+    layout_properties: {grid_position: 'AEQDIS,MHRLZQ', full_width_row: false}
   - name: spacer_2
     properties: {height: 245}
     type: Spacer
