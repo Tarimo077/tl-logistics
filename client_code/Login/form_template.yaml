@@ -12,7 +12,7 @@ components:
   layout_properties: {grid_position: 'RZGQMR,IRVSGH'}
 - name: rich_text_1
   properties: {content: "{imgLogo1}\n{spacerlogo}\n{lblusername}\n{txtboxusername}\n\
-      {lblpassword} \n{textboxpassword}\n{btnlogin}", align: center, spacing_above: large,
+      {lblpassword} \n{textboxpassword} {btnShPwd}\n{btnlogin}", align: center, spacing_above: large,
     background: 'theme:On Primary Container', foreground: 'theme:On Primary', role: rounded-borders}
   type: RichText
   layout_properties: {grid_position: 'RZGQMR,EKGZLO', full_width_row: false}
@@ -28,7 +28,7 @@ components:
       text: Username}
     type: Label
     layout_properties: {slot: lblusername}
-  - name: text_box_1
+  - name: username
     properties: {align: left, spacing_above: none, spacing_below: large, role: outlined,
       foreground: '', background: 'theme:On Primary'}
     type: TextBox
@@ -37,7 +37,7 @@ components:
     properties: {spacing_below: none, foreground: 'theme:On Primary', text: Password}
     type: Label
     layout_properties: {slot: lblpassword}
-  - name: text_box_2
+  - name: password
     properties: {spacing_above: none, spacing_below: large, role: outlined, foreground: '',
       background: 'theme:On Primary'}
     type: TextBox
@@ -51,6 +51,12 @@ components:
     properties: {height: 26.399932861328125}
     type: Spacer
     layout_properties: {slot: spacerlogo}
+  - name: eye
+    properties: {text: '', role: rounded-borders, align: left, background: 'theme:Primary',
+      foreground: 'theme:Secondary Container', icon: 'fa:eye', spacing_above: none,
+      font_size: 10}
+    type: Button
+    layout_properties: {slot: btnShPwd, width: 0.1}
 - name: spacer_2
   properties: {height: 32}
   type: Spacer

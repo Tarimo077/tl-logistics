@@ -12,5 +12,14 @@ class Login(LoginTemplate):
     body_tag = anvil.js.window.document.body
     self.image_1.background = None
     body_tag.style.background =  "#21005E"#f"url(_/theme/TLbackground.jfif)"
+    self.eye.tooltip = 'view password'
+    self.pass_state = False
+    slide_in_up = Transition(translateY=["100%", 0])
+    slide_in_down = Transition(translateY=["-100%", 0])
+    zoom_in = Transition(scale=[.3, 1])
+    fade_in = Transition(opacity=[0, 1])
+    fly_in_down = slide_in_down | zoom_in | fade_in
+    animate(self.image_1, fly_in_down, duration=3000)
+    self.password.hide_text = True
 
     # Any code you write here will run before the form opens.
