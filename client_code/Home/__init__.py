@@ -46,7 +46,7 @@ class Home(HomeTemplate):
 
     total_amount = sum(amount_generated.values())
     total_amount_formatted = "${:,.2f}".format(total_amount)
-    self.moneyin.text = "CASH IN: " + str(total_amount_formatted) + "\t"
+    self.moneyin.text = str(total_amount_formatted) + "\t"
     grouped_data = dict(sorted(grouped_data.items()))
 
 # Print or plot the grouped data

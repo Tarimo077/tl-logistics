@@ -39,82 +39,110 @@ components:
       foreground: '#fa0000', role: null}
     type: Label
     layout_properties: {grid_position: 'AZLGOD,QEGURP KOWHIN,WHBSWM', full_width_row: true}
-  - name: label_1
-    properties: {text: TOP DRIVERS BY TRIPS, align: center, bold: true}
-    type: Label
-    layout_properties: {grid_position: 'XIJJVO,ZVBAQS', full_width_row: true}
-  - name: label_4
-    properties: {text: TOP INCOME GENERATORS, align: center, bold: true}
-    type: Label
-    layout_properties: {grid_position: 'XIJJVO,KIQUVB', full_width_row: true}
-  - name: data_grid_1
-    properties:
-      columns:
-      - {id: JKSDUP, title: Name, data_key: name}
-      - {id: VJQQOR, title: Trips, data_key: trips}
-      role: tonal-data-grid
-      rows_per_page: 10
-      background: theme:On Primary Container
-    type: DataGrid
-    layout_properties: {grid_position: 'PSWWUB,CUNTWD', full_width_row: true}
+  - name: rich_text_2
+    properties: {content: '{lbltitle}
+
+        {grid1}', align: center}
+    type: RichText
+    layout_properties: {grid_position: 'YRFVTV,GJOADC', full_width_row: true}
     components:
-    - name: repeating_panel_1
-      properties: {item_template: Home.RowTemplate1}
-      type: RepeatingPanel
-  - name: data_grid_2
-    properties:
-      columns:
-      - {id: JKSDUP, title: Name, data_key: name}
-      - {id: VJQQOR, title: Amount, data_key: amount}
-      role: tonal-data-grid
-      rows_per_page: 10
-      background: theme:On Primary Container
-    type: DataGrid
-    layout_properties: {grid_position: 'PSWWUB,NMGGDP', full_width_row: true}
+    - name: label_1
+      properties: {text: TOP DRIVERS BY TRIPS, align: center, bold: true}
+      type: Label
+      layout_properties: {slot: lbltitle}
+    - name: data_grid_1
+      properties:
+        columns:
+        - {id: JKSDUP, title: Name, data_key: name}
+        - {id: VJQQOR, title: Trips, data_key: trips}
+        role: tonal-data-grid
+        rows_per_page: 10
+        background: theme:On Primary Container
+      type: DataGrid
+      layout_properties: {slot: grid1, width: 430.20001220703125}
+      components:
+      - name: repeating_panel_1
+        properties: {item_template: Home.RowTemplate1}
+        type: RepeatingPanel
+  - name: rich_text_3
+    properties: {align: center, content: '{lbltitle}
+
+        {grid2}'}
+    type: RichText
+    layout_properties: {grid_position: 'YRFVTV,MKRDNZ', full_width_row: true}
     components:
-    - name: repeating_panel_2
-      properties: {item_template: Home.RowTemplate2}
-      type: RepeatingPanel
+    - name: label_4
+      properties: {text: TOP INCOME GENERATORS, align: center, bold: true}
+      type: Label
+      layout_properties: {slot: lbltitle}
+    - name: data_grid_2
+      properties:
+        columns:
+        - {id: JKSDUP, title: Name, data_key: name}
+        - {id: VJQQOR, title: Amount, data_key: amount}
+        role: tonal-data-grid
+        rows_per_page: 10
+        background: theme:On Primary Container
+      type: DataGrid
+      layout_properties: {slot: grid2, width: 419.5499755859375}
+      components:
+      - name: repeating_panel_2
+        properties: {item_template: Home.RowTemplate2}
+        type: RepeatingPanel
   - name: spacer_1
     properties: {height: 32}
     type: Spacer
     layout_properties: {grid_position: 'KEDHTS,FUZVYB'}
-  - name: label_2
-    properties: {text: TOP DRIVER DESTINATIONS, align: center, bold: true}
-    type: Label
-    layout_properties: {grid_position: 'NVFKQA,QTYHFD', full_width_row: true}
-  - name: label_3
-    properties: {text: TOP DRIVER ORIGINS, align: center, bold: true}
-    type: Label
-    layout_properties: {grid_position: 'NVFKQA,ICLQJQ', full_width_row: true}
-  - name: data_grid_3
-    properties:
-      columns:
-      - {id: JKSDUP, title: Name, data_key: driver}
-      - {id: VJQQOR, title: Destinations, data_key: destinations}
-      rows_per_page: 10
-      role: tonal-data-grid
-      background: theme:On Primary Container
-    type: DataGrid
+  - name: rich_text_4
+    properties: {align: center, content: '{lbltitle}
+
+        {grid1}'}
+    type: RichText
+    layout_properties: {grid_position: 'SWJZBO,BRGEAI', full_width_row: true}
     components:
-    - name: repeating_panel_3
-      properties: {item_template: DriverStats.RowTemplate3}
-      type: RepeatingPanel
-    layout_properties: {grid_position: 'NATDHY,QVYPAW', full_width_row: true}
-  - name: data_grid_4
-    properties:
-      columns:
-      - {id: JKSDUP, title: Name, data_key: driver}
-      - {id: VJQQOR, title: Origins, data_key: origins}
-      rows_per_page: 10
-      role: tonal-data-grid
-      background: theme:On Primary Container
-    type: DataGrid
+    - name: label_2
+      properties: {text: TOP DRIVER DESTINATIONS, align: center, bold: true}
+      type: Label
+      layout_properties: {slot: lbltitle}
+    - name: data_grid_3
+      properties:
+        columns:
+        - {id: JKSDUP, title: Name, data_key: driver}
+        - {id: VJQQOR, title: Destinations, data_key: destinations}
+        rows_per_page: 10
+        role: tonal-data-grid
+        background: theme:On Primary Container
+      type: DataGrid
+      components:
+      - name: repeating_panel_3
+        properties: {item_template: DriverStats.RowTemplate3}
+        type: RepeatingPanel
+      layout_properties: {slot: grid1, width: 427.78701220703124}
+  - name: rich_text_5
+    properties: {align: center, content: '{lbltitle}
+
+        {grid1}'}
+    type: RichText
+    layout_properties: {grid_position: 'SWJZBO,DISRET', full_width_row: true}
     components:
-    - name: repeating_panel_4
-      properties: {item_template: DriverStats.RowTemplate4}
-      type: RepeatingPanel
-    layout_properties: {grid_position: 'NATDHY,BOGMXB', full_width_row: true}
+    - name: label_3
+      properties: {text: TOP DRIVER ORIGINS, align: center, bold: true}
+      type: Label
+      layout_properties: {slot: lbltitle}
+    - name: data_grid_4
+      properties:
+        columns:
+        - {id: JKSDUP, title: Name, data_key: driver}
+        - {id: VJQQOR, title: Origins, data_key: origins}
+        rows_per_page: 10
+        role: tonal-data-grid
+        background: theme:On Primary Container
+      type: DataGrid
+      components:
+      - name: repeating_panel_4
+        properties: {item_template: DriverStats.RowTemplate4}
+        type: RepeatingPanel
+      layout_properties: {slot: grid1, width: 423.574951171875}
 - type: FlowPanel
   properties: {}
   name: navbar_links

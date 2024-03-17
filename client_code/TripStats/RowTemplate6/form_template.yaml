@@ -1,5 +1,5 @@
 is_package: true
 container:
   type: DataRowPanel
-  properties: {align: center, background: '#00ff00', foreground: 'theme:On Primary'}
+  properties: {align: center, background: 'theme:Primary', foreground: 'theme:On Primary'}
 components: []

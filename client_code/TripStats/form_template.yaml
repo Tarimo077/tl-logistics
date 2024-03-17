@@ -56,7 +56,7 @@ components:
       - {id: JKSDUP, title: Peak Business Months, data_key: peak}
       role: tonal-data-grid
       rows_per_page: 5
-      background: '#009400'
+      background: theme:On Primary Container
     type: DataGrid
     components:
     - name: repeating_panel_2
@@ -70,7 +70,7 @@ components:
       - {id: JKSDUP, title: Off Peak Business Months, data_key: offpeak}
       role: tonal-data-grid
       rows_per_page: 5
-      background: '#a80000'
+      background: theme:On Primary Container
     type: DataGrid
     components:
     - name: repeating_panel_3
@@ -80,11 +80,35 @@ components:
   - name: spacer_5
     properties: {height: 32}
     type: Spacer
-    layout_properties: {grid_position: 'JXLRCY,WMZZNH'}
-  - name: label_1
-    properties: {align: center, text: ALL TRIPS, bold: true}
-    type: Label
-    layout_properties: {grid_position: 'GUQXJK,GETZAV'}
+    layout_properties: {grid_position: 'OLKCLP,MJXRJV'}
+  - name: rich_text_3
+    properties: {align: center, content: '{btn1}'}
+    type: RichText
+    layout_properties: {grid_position: 'YCKGTK,DAWFAZ', full_width_row: true}
+    components:
+    - name: switchGraph
+      properties: {text: btn, icon: '', background: 'theme:Primary', foreground: 'theme:On
+          Primary', role: tonal-button, align: full}
+      type: Button
+      layout_properties: {slot: btn1}
+      event_bindings: {click: switchGraph_click}
+  - name: plot_1
+    properties: {height: '500'}
+    type: Plot
+    layout_properties: {grid_position: 'GTCEZM,AYYYMV', full_width_row: true}
+  - name: spacer_6
+    properties: {height: 32}
+    type: Spacer
+    layout_properties: {grid_position: 'NXAATZ,VZQNAU'}
+  - name: rich_text_2
+    properties: {align: center, content: '{lbltitle}', spacing_below: none}
+    type: RichText
+    layout_properties: {grid_position: 'KUXTNC,GPYLJA'}
+    components:
+    - name: label_1
+      properties: {align: center, text: ALL TRIPS, bold: true}
+      type: Label
+      layout_properties: {slot: lbltitle}
   - name: data_grid_4
     properties:
       columns:
@@ -100,7 +124,7 @@ components:
     - name: repeating_panel_4
       properties: {item_template: TripStats.RowTemplate8}
       type: RepeatingPanel
-    layout_properties: {grid_position: 'EKFPDW,VWTJIF', full_width_row: true}
+    layout_properties: {grid_position: 'FXUOXS,MYMDGN', full_width_row: true}
 - type: FlowPanel
   properties: {}
   name: navbar_links
