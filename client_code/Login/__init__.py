@@ -2,6 +2,7 @@ from ._anvil_designer import LoginTemplate
 from anvil import *
 import anvil.server
 import anvil.js
+from anvil_extras.animation import animate, Transition
 
 class Login(LoginTemplate):
   def __init__(self, **properties):
@@ -19,7 +20,7 @@ class Login(LoginTemplate):
     zoom_in = Transition(scale=[.3, 1])
     fade_in = Transition(opacity=[0, 1])
     fly_in_down = slide_in_down | zoom_in | fade_in
-    animate(self.image_1, fly_in_down, duration=3000)
+    animate(self.image_1, fly_in_down, duration=4000)
     self.password.hide_text = True
 
     # Any code you write here will run before the form opens.

@@ -52,7 +52,7 @@ components:
     type: Spacer
     layout_properties: {slot: spacerlogo}
   - name: eye
-    properties: {text: '', role: rounded-borders, align: left, background: 'theme:Primary',
+    properties: {text: '', role: rounded-borders, align: full, background: 'theme:Primary',
       foreground: 'theme:Secondary Container', icon: 'fa:eye', spacing_above: none,
       font_size: 10}
     type: Button
