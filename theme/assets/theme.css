@@ -1051,3 +1051,11 @@ div.plot-container.plotly svg.main-svg {
 .anvil-spinner {
     --anvil-spinner-bg: %color:Surface Variant%;
 }
+
+.anvil-role-centred {
+  position: absolute;
+  top: 25%;
+  left: 25%;
+  transform: translate(-25%, 25%);
+  text-align: center;
+}

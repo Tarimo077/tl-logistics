@@ -1,7 +1,12 @@
 container: {type: ColumnPanel}
 components:
 - name: rich_text_1
-  properties: {align: center}
+  properties: {align: center, role: centred, content: '{lbltry}'}
   type: RichText
   layout_properties: {grid_position: 'KZVPGW,QIYEYI'}
+  components:
+  - name: label_1
+    properties: {text: x}
+    type: Label
+    layout_properties: {slot: lbltry}
 is_package: true
