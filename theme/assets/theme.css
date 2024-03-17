@@ -1054,8 +1054,7 @@ div.plot-container.plotly svg.main-svg {
 
 .anvil-role-centred {
   position: absolute;
-  top: 25%;
-  left: 25%;
-  transform: translate(-25%, 25%);
+  margin-top: 25%;
+  margin-left: 50%;
   text-align: center;
 }

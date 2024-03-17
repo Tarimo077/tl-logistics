@@ -4,14 +4,15 @@ services:
   client_config: {}
   server_config: {}
 startup: {type: form, module: Login}
-package_name: M3_App_2
+package_name: TL_Logistics
 allow_embedding: false
-name: M3 App 2
+name: TL Logistics
 runtime_options:
   version: 2
   client_version: '3'
   server_version: python3-full
   server_spec: {base: python310-minimal}
+metadata: {logo_img: 'asset:TL.png', title: TL Logistics}
 startup_form: null
 native_deps: {head_html: '<link rel="preconnect" href="https://fonts.googleapis.com">
 
