@@ -1,7 +1,7 @@
 is_package: true
 container:
   type: HtmlTemplate
-  properties: {html: '@theme:standard-page.html'}
+  properties: {html: '@theme:standard-page.html', background: 'theme:On Primary'}
 components:
 - type: ColumnPanel
   properties: {col_widths: '{"ZESPKE":45,"QEGURP":15}'}
@@ -58,8 +58,9 @@ components:
         role: tonal-data-grid
         rows_per_page: 10
         background: theme:On Primary Container
+        wrap_on: never
       type: DataGrid
-      layout_properties: {slot: grid1, width: 430.20001220703125}
+      layout_properties: {slot: grid1, width: 370.188}
       components:
       - name: repeating_panel_1
         properties: {item_template: Home.RowTemplate1}
@@ -84,7 +85,7 @@ components:
         rows_per_page: 10
         background: theme:On Primary Container
       type: DataGrid
-      layout_properties: {slot: grid2, width: 419.5499755859375}
+      layout_properties: {slot: grid2, width: 370.547}
       components:
       - name: repeating_panel_2
         properties: {item_template: Home.RowTemplate2}
@@ -117,7 +118,7 @@ components:
       - name: repeating_panel_3
         properties: {item_template: DriverStats.RowTemplate3}
         type: RepeatingPanel
-      layout_properties: {slot: grid1, width: 427.78701220703124}
+      layout_properties: {slot: grid1, width: 369.766}
   - name: rich_text_5
     properties: {align: center, content: '{lbltitle}
 
@@ -142,7 +143,7 @@ components:
       - name: repeating_panel_4
         properties: {item_template: DriverStats.RowTemplate4}
         type: RepeatingPanel
-      layout_properties: {slot: grid1, width: 423.574951171875}
+      layout_properties: {slot: grid1, width: 370.547}
 - type: FlowPanel
   properties: {}
   name: navbar_links
