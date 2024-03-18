@@ -15,7 +15,7 @@ runtime_options:
   client_version: '3'
   server_version: python3-full
   server_spec: {base: python310-minimal}
-metadata: {logo_img: 'asset:TL.png', title: TL Logistics}
+metadata: {logo_img: 'asset:TL.ico', title: TL Logistics}
 startup_form: null
 native_deps: {head_html: '<link rel="preconnect" href="https://fonts.googleapis.com">
 
