@@ -69,6 +69,7 @@ class Login(LoginTemplate):
       alert('Wrong username or password', buttons=None)
       self.login.background = '#FFFFFF'
       self.password.text = ''
+      self.login.enabled = True
       return
     else:
       open_form('Home')
