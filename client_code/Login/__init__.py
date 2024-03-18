@@ -1,5 +1,8 @@
 from ._anvil_designer import LoginTemplate
 from anvil import *
+import anvil.tables as tables
+import anvil.tables.query as q
+from anvil.tables import app_tables
 import anvil.server
 import anvil.js
 from anvil_extras.animation import animate, Transition
@@ -42,3 +45,31 @@ class Login(LoginTemplate):
       self.eye.background = '#FFFFFF'
       self.eye.foreground = '#21005E'
       self.eye.tooltip = 'view password'
+
+  def login_click(self, **event_args):
+    """This method is called when the button is clicked"""
+    self.login.background = '#FF0000'
+    self.login.enabled = False
+    username = self.username.text
+    password = self.password.text
+    d = app_tables.users.get(email=username,password=password)
+    print(d)
+    if username == '':
+      alert('Fill in username')
+      self.password.text = ''
+      self.login.background = '#FFFFFF'
+      self.login.enabled = True
+      return
+    if password == '':
+      alert('Fill in password')
+      self.login.background = '#FFFFFF'
+      self.login.enabled = True
+      return
+    if d is None:
+      alert('Wrong username or password', buttons=None)
+      self.login.background = '#FFFFFF'
+      self.password.text = ''
+      return
+    else:
+      open_form('Home')
+      alert('\tWelcome '+d['username'], buttons=None)

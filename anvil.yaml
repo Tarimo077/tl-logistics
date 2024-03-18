@@ -22,4 +22,22 @@ native_deps: {head_html: '<link rel="preconnect" href="https://fonts.googleapis.
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
     <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">'}
+db_schema:
+  users:
+    client: search
+    server: full
+    columns:
+    - name: username
+      admin_ui: {width: 200, order: 0}
+      type: string
+    - name: password
+      admin_ui: {width: 200, order: 1}
+      type: string
+    - name: email
+      admin_ui: {width: 200, order: 2}
+      type: string
+    - name: phone
+      admin_ui: {width: 200, order: 3}
+      type: number
+    title: Users
 renamed: true

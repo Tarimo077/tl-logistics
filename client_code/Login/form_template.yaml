@@ -39,12 +39,13 @@ components:
       background: 'theme:On Primary', placeholder: password}
     type: TextBox
     layout_properties: {slot: textboxpassword, width: 248.5879755859375}
-  - name: button_1
+  - name: login
     properties: {role: rounded-borders, align: full, foreground: 'theme:Primary',
       text: LOG IN, font_size: null, spacing_above: large, background: 'theme:On Primary',
       bold: true, underline: false}
     type: Button
     layout_properties: {slot: btnlogin}
+    event_bindings: {click: login_click}
   - name: spacer_4
     properties: {height: 26.399932861328125}
     type: Spacer
