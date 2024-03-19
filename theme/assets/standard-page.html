@@ -46,6 +46,15 @@
       $('.content').animate({'margin-left':0}, function(){})
     }
   }
+  function getComponentPosition(component) {
+            var rect = component.getBoundingClientRect();
+            var position = {
+                x: rect.left,
+                y: rect.top
+            };
+            console.log("Component position:", position);
+            return position;
+}
   
   function showSidebar() {
     $('.nav-shield').addClass("shown");

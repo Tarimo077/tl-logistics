@@ -12,7 +12,7 @@ components:
   type: Spacer
   layout_properties: {grid_position: 'RNLDKP,FISMEU'}
 - name: rich_text_1
-  properties: {content: '{lblDriver} {dropdownDriver} {txtboxDriver} {btnNewDriver}
+  properties: {content: '{lblDriver} {dropdownDriver} {btnNewDriver}
 
 
       {lblAmount} {txtboxAmount}
@@ -29,18 +29,14 @@ components:
   layout_properties: {grid_position: 'RNLDKP,HCNFZV', full_width_row: false}
   components:
   - name: label_2
-    properties: {align: left, text: 'Driver:', bold: true}
+    properties: {align: left, text: 'Driver:   ', bold: true}
     type: Label
     layout_properties: {slot: lblDriver}
-  - name: drop_down_1
+  - name: dropdownDriver
     properties: {include_placeholder: true, placeholder: choose driver, role: outlined,
       align: left}
     type: DropDown
-    layout_properties: {slot: dropdownDriver, width: 100}
-  - name: text_box_1
-    properties: {role: outlined, align: left, tooltip: Driver name}
-    type: TextBox
-    layout_properties: {slot: txtboxDriver, width: 130}
+    layout_properties: {slot: dropdownDriver, width: 150}
   - name: label_3
     properties: {text: 'Amount:', bold: true}
     type: Label
@@ -50,14 +46,15 @@ components:
     type: TextBox
     layout_properties: {slot: txtboxAmount, width: 130}
   - name: label_4
-    properties: {text: 'Route:', bold: true}
+    properties: {text: 'Route:    ', bold: true}
     type: Label
     layout_properties: {slot: lblRoute}
   - name: newDriver
     properties: {text: New Driver, icon: 'fa:user-plus', role: outlined-button, background: 'theme:Primary',
-      foreground: 'theme:On Primary', bold: true, font_size: null}
+      foreground: 'theme:On Primary', bold: true, font_size: null, align: center}
     type: Button
     layout_properties: {slot: btnNewDriver, width: null}
+    event_bindings: {click: newDriver_click}
   - name: from
     properties: {placeholder: from, role: outlined}
     type: TextBox
@@ -67,11 +64,11 @@ components:
     type: TextBox
     layout_properties: {slot: txtboxTo, width: 62}
   - name: label_5
-    properties: {text: 'Date:'}
+    properties: {text: 'Date:      ', bold: true, align: left}
     type: Label
     layout_properties: {slot: lblDate}
   - name: date_picker_1
     properties: {placeholder: date, role: outlined}
     type: DatePicker
-    layout_properties: {slot: datepickerDate, width: 65}
+    layout_properties: {slot: datepickerDate, width: 130}
 is_package: true
