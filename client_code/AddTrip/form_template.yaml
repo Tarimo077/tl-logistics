@@ -24,7 +24,7 @@ components:
       {lblDate}{datepickerDate}
 
 
-      ', align: left}
+      ', align: left, spacing_below: large}
   type: RichText
   layout_properties: {grid_position: 'RNLDKP,HCNFZV', full_width_row: false}
   components:
@@ -58,7 +58,7 @@ components:
   - name: from
     properties: {placeholder: from, role: outlined}
     type: TextBox
-    layout_properties: {slot: txtboxFrom, width: 64}
+    layout_properties: {slot: txtboxFrom, width: 59.199981689453125}
   - name: text_box_3
     properties: {placeholder: to, role: outlined}
     type: TextBox
@@ -71,4 +71,10 @@ components:
     properties: {placeholder: date, role: outlined}
     type: DatePicker
     layout_properties: {slot: datepickerDate, width: 130}
+- name: addTrip
+  properties: {text: ADD TRIP, role: outlined-button, spacing_above: large, background: 'theme:Primary',
+    foreground: 'theme:Primary Container', bold: true}
+  type: Button
+  layout_properties: {grid_position: 'QXYNZO,APSRDA'}
+  event_bindings: {click: addTrip_click}
 is_package: true
