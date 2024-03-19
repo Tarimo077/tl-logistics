@@ -510,7 +510,18 @@ color: %color:On Primary Container%;
   background: linear-gradient(0deg, %color:Primary Overlay 3%, %color:Primary Overlay 3%), %color:Background%;
   foreground: %color:#21005E;
   box-shadow: none;
-  border: 10px solid #6750A4;
+  border: 5px solid #6750A4;
+  text-align: center;
+}
+
+.anvil-role-personal-alert {
+  border-radius: 28px;
+  background: #FF0000;
+  foreground: #FF0000;
+  box-shadow: none;
+  border: 5px solid #FF0000;
+  text-align: center;
+  color: #FF0000;
 }
 
 .modal-header {

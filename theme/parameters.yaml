@@ -51,6 +51,7 @@ roles:
   components: [TextBox, TextArea, DatePicker, DropDown]
 - {name: rounded-borders}
 - {name: centred}
+- {name: personal-alert}
 color_scheme:
   preset_groups:
   - name: Colour Scheme
