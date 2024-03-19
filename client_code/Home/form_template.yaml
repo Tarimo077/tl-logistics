@@ -9,8 +9,10 @@ components:
   layout_properties: {slot: default}
   components:
   - name: rich_text_3
-    properties: {content: '{lblcashin}{btncashin}', background: 'theme:On Primary
-        Container', role: rounded-borders, align: center}
+    properties: {content: '{lblcashin}
+
+        {btncashin}', background: 'theme:On Primary Container', role: rounded-borders,
+      align: center}
     type: RichText
     layout_properties: {grid_position: 'YXWGHO,RBIIXF', full_width_row: true}
     components:
