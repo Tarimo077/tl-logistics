@@ -514,6 +514,14 @@ color: %color:On Primary Container%;
   text-align: center;
 }
 
+.anvil-role-card{
+  foreground: #FFFFFF;
+  text-align: center;
+  border: 3px solid #21005E;
+  border-bottom: none;
+  color: #FFFFFF;
+  margin-right: none;
+}
 .anvil-role-personal-alert {
   border-radius: 28px;
   background: #FF0000;
