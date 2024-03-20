@@ -153,3 +153,11 @@ class DriverStats(DriverStatsTemplate):
   def button_4_click(self, **event_args):
     """This method is called when the button is clicked"""
     open_form('TripStats')
+
+  def button_2_click(self, **event_args):
+    """This method is called when the button is clicked"""
+    c = confirm('Are you sure you want to logout?', buttons=[("Yes", True),("No", False)])
+    if(c==True):
+      open_form('Login')
+    else:
+      pass

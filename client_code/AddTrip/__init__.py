@@ -5,9 +5,9 @@ import anvil.tables as tables
 import anvil.tables.query as q
 from anvil.tables import app_tables
 import json
-from anvil_extras.animation import animate, get_bounding_rect
 from time import sleep
 from anvil_extras import MessagePill
+from datetime import datetime
 
 class AddTrip(AddTripTemplate):
   def __init__(self, **properties):
@@ -45,4 +45,40 @@ class AddTrip(AddTripTemplate):
     if self.amount.text is not None or self.dropdownDriver.selected_value is not None or self.txtFrom.text is not None or self.txtTo.text is not None or self.date.date is not None:
       self.msgPill.visible = False
       amnt = "${:,.0f}".format(self.amount.text)
-      print(str(amnt))
+      route = self.txtFrom.text.upper() + "-" + self.txtTo.text.upper()
+      date = str(self.date.date)
+      # Parse the input date string into a datetime object
+      input_date = datetime.strptime(date, '%Y-%m-%d')
+# Format the datetime object into the desired format
+      output_date_str = input_date.strftime('%d-%b-%y')
+      amnt = amnt + ".00"
+      driver = self.dropdownDriver.selected_value
+      dt = {
+        "name": driver,
+        "amount": str(amnt),
+        "location": route,
+        "date": output_date_str
+      }
+      c = confirm('Are you sure you want to add this trip?', buttons=[("Yes", True),("No", False)])
+      if(c==True):
+        anvil.server.call('addTrip', dt)
+        self.msgPill.level = "success"
+        self.msgPill.message = "TRIP ADDED SUCCESSFULLY"
+        self.msgPill.visible = True
+        sleep(3)
+        self.msgPill.visible = False  
+        open_form('TripStats')
+      elif(c==False):
+        c1 = confirm('Do you want to add a new trip?', buttons=[("Yes", True), ("No", False)])
+        if(c1==True): 
+          self.dropdownDriver.text = None
+          self.amount.text = ""
+          self.txtFrom.text = ""
+          self.txtTo.text = ""
+          self.date.date = None
+        elif(c==False):
+          open_form('TripStats')
+        else:
+          pass
+      else:
+        pass

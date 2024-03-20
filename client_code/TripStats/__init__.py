@@ -168,4 +168,16 @@ class TripStats(TripStatsTemplate):
     else:
       self.plot_line(self.t)
       self.bar = True
+
+  def outlined_button_1_click(self, **event_args):
+    """This method is called when the button is clicked"""
+    open_form('AddTrip')
+
+  def button_2_click(self, **event_args):
+    """This method is called when the button is clicked"""
+    c = confirm('Are you sure you want to logout?', buttons=[("Yes", True),("No", False)])
+    if(c==True):
+      open_form('Login')
+    else:
+      pass
       

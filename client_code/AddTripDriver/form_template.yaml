@@ -1,12 +1,24 @@
 container:
   type: ColumnPanel
-  properties: {col_widths: '{"BNFKED":10,"BGHNMG":50}'}
+  properties: {col_widths: '{"BNFKED":10,"BGHNMG":50,"CQWCTZ":21,"ITSELA":18,"GVRWTE":21}'}
 components:
 - name: label_1
   properties: {text: NEW TRIP, spacing_above: large, align: center, italic: false,
     bold: true, spacing_below: large, font_size: 24}
   type: Label
   layout_properties: {grid_position: 'OYQPIF,CTBOYM'}
+- name: spacer_3
+  properties: {height: 32}
+  type: Spacer
+  layout_properties: {grid_position: 'TUBLDR,CQWCTZ'}
+- name: msgPill
+  properties: {level: error}
+  type: form:dep_7cohqonjlo4cm:MessagePill
+  layout_properties: {grid_position: 'TUBLDR,ITSELA', row_background: ''}
+- name: spacer_2
+  properties: {height: 32}
+  type: Spacer
+  layout_properties: {grid_position: 'TUBLDR,GVRWTE'}
 - name: spacer_1
   properties: {height: 32}
   type: Spacer
@@ -24,7 +36,7 @@ components:
       {lblDate}{datepickerDate}
 
 
-      '}
+      ', spacing_below: large}
   type: RichText
   layout_properties: {grid_position: 'TVDPAB,BGHNMG'}
   components:
@@ -53,6 +65,7 @@ components:
       foreground: 'theme:On Primary', icon: 'fa:user-md'}
     type: Button
     layout_properties: {slot: btnExistingDriver}
+    event_bindings: {click: button_1_click}
   - name: amount
     properties: {role: outlined, placeholder: amount, type: number}
     type: TextBox
@@ -65,8 +78,14 @@ components:
     properties: {role: outlined, placeholder: to}
     type: TextBox
     layout_properties: {slot: txtboxTo, width: 96.98748779296875}
-  - name: date_picker_1
+  - name: date
     properties: {role: outlined, placeholder: date}
     type: DatePicker
     layout_properties: {slot: datepickerDate, width: 203.00001220703126}
+- name: outlined_button_1
+  properties: {text: ADD TRIP, role: outlined-button, spacing_above: large, background: 'theme:Primary',
+    foreground: 'theme:On Primary'}
+  type: Button
+  layout_properties: {grid_position: 'GAKQZP,ZGNMQL'}
+  event_bindings: {click: outlined_button_1_click}
 is_package: true

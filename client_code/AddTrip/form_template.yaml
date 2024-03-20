@@ -1,6 +1,6 @@
 container:
   type: ColumnPanel
-  properties: {col_widths: '{"FISMEU":10,"HCNFZV":50,"WNQXQE":23,"TSWCBB":17,"GKRVNT":20}'}
+  properties: {col_widths: '{"FISMEU":10,"HCNFZV":50,"WNQXQE":21,"TSWCBB":18,"GKRVNT":21}'}
 components:
 - name: label_1
   properties: {text: NEW TRIP, spacing_above: large, align: center, italic: false,

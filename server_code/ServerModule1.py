@@ -36,5 +36,10 @@ def getTrips():
   return response
 
 @anvil.server.callable
-def setCashVisisbility():
-  return False
+def addTrip(data):
+  url = "https://appliapay.com/addTrip"
+  headers = {
+    "Content-Type": "application/json"
+  }
+  response = anvil.http.request(url, method="POST", data=data, headers=headers, username='admin', password='123Give!@#')
+  return response

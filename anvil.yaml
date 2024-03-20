@@ -6,7 +6,7 @@ services:
 - source: /runtime/services/tables.yml
   client_config: {}
   server_config: {}
-startup: {type: form, module: AddTrip}
+startup: {type: form, module: Login}
 package_name: TL_Logistics
 allow_embedding: false
 name: TL Logistics
