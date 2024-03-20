@@ -89,4 +89,8 @@ components:
   type: Button
   layout_properties: {grid_position: 'GAKQZP,ZGNMQL'}
   event_bindings: {click: outlined_button_1_click}
+- name: spacer_4
+  properties: {height: 54.39996337890625}
+  type: Spacer
+  layout_properties: {grid_position: 'MPQRSD,NQYNYT'}
 is_package: true
