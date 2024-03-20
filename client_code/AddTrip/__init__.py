@@ -14,6 +14,7 @@ class AddTrip(AddTripTemplate):
     # Set Form properties and Data Bindings.
     self.init_components(**properties)
     self.msgPill.visible = False
+    self.background = "#FFFFFF"
     response = anvil.server.call('getDrivers')
     text = response.get_bytes().decode('utf-8')
     drivers = json.loads(text)
